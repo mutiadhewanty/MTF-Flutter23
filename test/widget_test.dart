@@ -1,30 +1,50 @@
-// // This is a basic Flutter widget test.
-// //
-// // To perform an interaction with a widget in your test, use the WidgetTester
-// // utility in the flutter_test package. For example, you can send tap and scroll
-// // gestures. You can also use WidgetTester to find child widgets in the widget
-// // tree, read text, and verify that the values of widget properties are correct.
+import 'package:dio/dio.dart';
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_test/flutter_test.dart';
+class Post {
+  final int id;
+  final String userImage;
+  final String username;
+  final String postImage;
+  final String caption;
 
-// import 'package:my_first_project/main.dart';
+  Post(
+      {required this.id,
+      required this.userImage,
+      required this.username,
+      required this.postImage,
+      required this.caption});
+}
+
+void main() {
+  Post a = Post(
+      id: 1,
+      userImage: "htttpssss/aaa",
+      username: "paidjo",
+      postImage: "http:///assaa.png",
+      caption: "aduh galau");
+  Post b = Post(
+      id: 2,
+      userImage: "userImage",
+      username: "username",
+      postImage: "postImage",
+      caption: "caption");
+
+  print(a.caption);
+
+  List<Post> postsList = [a, b];
+  print(postsList[0].caption);
+}
+
 
 // void main() {
-//   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-//     // Build our app and trigger a frame.
-//     await tester.pumpWidget(const MyApp());
+//   List<String> mahasiswaList = ["bedjo", "laki-laki", "Madura"];
+//   Map<String, String> mahasiswaMap = {
+//     "nama": "bedjo",
+//     "jk": "laki-laki",
+//     "kota": "Madura"
+//   };
 
-//     // Verify that our counter starts at 0.
-//     expect(find.text('0'), findsOneWidget);
-//     expect(find.text('1'), findsNothing);
-
-//     // Tap the '+' icon and trigger a frame.
-//     await tester.tap(find.byIcon(Icons.add));
-//     await tester.pump();
-
-//     // Verify that our counter has incremented.
-//     expect(find.text('0'), findsNothing);
-//     expect(find.text('1'), findsOneWidget);
-//   });
+//   print(mahasiswaList[2]);
+//   print("");
+//   print(mahasiswaMap["kota"]);
 // }

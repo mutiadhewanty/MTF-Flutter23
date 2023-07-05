@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_first_project/pertemuan2/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -62,7 +63,13 @@ class LoginPage extends StatelessWidget {
                 style: ButtonStyle(
                     backgroundColor:
                         const MaterialStatePropertyAll<Color>(Colors.black)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
                 child: Text("Login"),
               ),
             ),
