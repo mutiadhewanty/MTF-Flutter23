@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/pertemuan3/post.dart';
-import 'package:my_first_project/pertemuan3/out/story.dart';
+import 'package:my_first_project/pertemuan3dan4/post.dart';
+import 'package:my_first_project/pertemuan3dan4/out/story.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SimpleFeedPage extends StatelessWidget {
