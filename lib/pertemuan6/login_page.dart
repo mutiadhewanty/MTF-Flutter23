@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_project/pertemuan6/shared_pref.dart';
+import 'package:my_first_project/pertemuan6/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -11,15 +13,25 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Future<void> login() async {
       var dio = Dio();
-      var response = await dio.post(
-        "$baseUrl/login",
-        data: {
-          "email": emailController.text,
-          "password": passwordController.text
-        },
-      );
+      try {
+        var response = await dio.post(
+          "$baseUrl/login",
+          data: {
+            "email": emailController.text,
+            "password": passwordController.text
+          },
+        );
+        SharedPref.pref?.setString("token", response.data["data"]["token"]);
 
-      print(response);
+        print(response);
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => HomePage(),
+          ),
+        );
+      } catch (e) {
+        print("mohon maaf kesalahan email dan  password");
+      }
     }
 
     return Scaffold(
@@ -80,15 +92,10 @@ class LoginPage extends StatelessWidget {
                   style: const ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll<Color>(Colors.black)),
-                  onPressed: () async {
+                  onPressed: () {
                     print(emailController.text);
                     print(passwordController.text);
-                    await login();
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (context) => HomePage(),
-                    //   ),
-                    // );
+                    login();
                   },
                   child: const Text("Login"),
                 ),
