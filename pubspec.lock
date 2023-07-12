@@ -70,7 +70,7 @@ packages:
       name: ffi
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "1.2.1"
   file:
     dependency: transitive
     description:
@@ -176,7 +176,7 @@ packages:
       name: path_provider_windows
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.7"
+    version: "2.0.7"
   platform:
     dependency: transitive
     description:
@@ -335,14 +335,14 @@ packages:
       name: webview_flutter_wkwebview
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.6.2"
+    version: "3.6.3"
   win32:
     dependency: transitive
     description:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.4"
+    version: "2.6.1"
   xdg_directories:
     dependency: transitive
     description:
