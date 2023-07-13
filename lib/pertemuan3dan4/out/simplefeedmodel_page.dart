@@ -1,31 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_project/pertemuan3dan4/post.dart';
-import 'package:my_first_project/pertemuan3dan4/out/story.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SimpleFeedPage extends StatelessWidget {
   const SimpleFeedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<Story> stories = [
-      Story(
-          "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "Jazmin"),
-      Story(
-          "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "Sylvester"),
-      Story(
-          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "Lavina"),
-      Story(
-          "https://images.pexels.com/photos/1124724/pexels-photo-1124724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "Mckenzie"),
-      Story(
-          "https://images.pexels.com/photos/1845534/pexels-photo-1845534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-          "Buster"),
-    ];
-
     List<Post> posts = [
       Post(
           username: "Mariano",

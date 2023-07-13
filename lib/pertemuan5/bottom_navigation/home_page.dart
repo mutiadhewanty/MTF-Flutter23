@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,20 +13,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("pertama");
     List<IconData> iconList = [
       Icons.home,
       Icons.search,
       Icons.video_camera_front,
       Icons.person,
     ];
-    print(_bottomNavIndex);
     return Scaffold(
-      body: Center(child: Text("Ini Home Page")),
+      body: const Center(child: Text("Ini Home Page")),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.red,
-        child: Text("+"),
+        child: const Text("+"),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(

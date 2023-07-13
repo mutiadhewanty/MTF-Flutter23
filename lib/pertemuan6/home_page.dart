@@ -16,16 +16,13 @@ class HomePage extends StatelessWidget {
         var response = await dio.post("$baseUrl/logout",
             options: Options(headers: {"Authorization": "Bearer $token"}));
         SharedPref.pref?.remove("token");
-        print(response);
 
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => LoginPage(),
           ),
         );
-      } catch (e) {
-        print("mohon maaf kesalahan email dan  password");
-      }
+      } catch (e) {}
     }
 
     return Scaffold(
@@ -39,7 +36,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 onLogout();
               },
-              child: Text("logout"))
+              child: const Text("logout"))
         ],
       )),
     );

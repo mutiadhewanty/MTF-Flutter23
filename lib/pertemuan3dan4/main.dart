@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_first_project/pertemuan3dan4/out/feed_page.dart';
-import 'package:my_first_project/pertemuan3dan4/simplefeed_page.dart';
 
 void main() {
   runApp(const MyApp());

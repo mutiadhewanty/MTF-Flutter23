@@ -12,23 +12,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           body: Center(
-        child: Container(
+        child: SizedBox(
           width: 300,
           child: Column(
             children: [
-              Text(
+              const Text(
                 "Strawberry Pavlova",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
               Container(
                 height: 12,
               ),
-              Text(
+              const Text(
                   "Pavlova is a meringue-based dessert. Originating in either Australia or New Zealand in the early 20th century, it was named after the Russian ballerina Anna Pavlova."),
               Container(
                 height: 12,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
               Container(
                 height: 12,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(

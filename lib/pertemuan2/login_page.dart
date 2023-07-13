@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_first_project/pertemuan2/home_page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -18,10 +16,10 @@ class LoginPage extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Welcome back! Glad to see you, Again!",
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
@@ -29,7 +27,7 @@ class LoginPage extends StatelessWidget {
               height: 32,
             ),
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(), hintText: "Enter Your Email"),
             ),
             Container(
@@ -37,7 +35,7 @@ class LoginPage extends StatelessWidget {
             ),
             TextFormField(
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: "Enter Your Password",
                   suffixIcon: Icon(Icons.remove_red_eye)),
@@ -45,7 +43,7 @@ class LoginPage extends StatelessWidget {
             Container(
               height: 12,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
@@ -53,24 +51,24 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                style: ButtonStyle(
+                style: const ButtonStyle(
                     backgroundColor:
-                        const MaterialStatePropertyAll<Color>(Colors.black)),
+                        MaterialStatePropertyAll<Color>(Colors.black)),
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => const HomePage(),
                     ),
                   );
                 },
-                child: Text("Login"),
+                child: const Text("Login"),
               ),
             ),
             Container(
@@ -84,7 +82,7 @@ class LoginPage extends StatelessWidget {
                   width: 120,
                   height: 2,
                 ),
-                Text("Or Login With"),
+                const Text("Or Login With"),
                 Container(
                   color: Colors.grey,
                   width: 120,
@@ -98,17 +96,17 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
+                SizedBox(
                   height: 36,
                   child: Image.network(
                       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"),
                 ),
-                Container(
+                SizedBox(
                   height: 36,
                   child: Image.network(
                       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"),
                 ),
-                Container(
+                SizedBox(
                   height: 36,
                   child: Image.network(
                       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png"),
@@ -121,9 +119,9 @@ class LoginPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don’t have an account?"),
+                const Text("Don’t have an account?"),
                 Container(width: 12),
-                Text(
+                const Text(
                   "Register Now",
                   style: TextStyle(color: Colors.cyan),
                 )

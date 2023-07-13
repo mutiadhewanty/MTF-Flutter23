@@ -23,15 +23,12 @@ class LoginPage extends StatelessWidget {
         );
         SharedPref.pref?.setString("token", response.data["data"]["token"]);
 
-        print(response);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => HomePage(),
           ),
         );
-      } catch (e) {
-        print("mohon maaf kesalahan email dan  password");
-      }
+      } catch (e) {}
     }
 
     return Scaffold(
@@ -74,9 +71,9 @@ class LoginPage extends StatelessWidget {
               Container(
                 height: 12,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
+                children: [
                   Text(
                     'Forgot Password',
                   ),
@@ -85,7 +82,7 @@ class LoginPage extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: 48,
                 child: ElevatedButton(
@@ -93,8 +90,6 @@ class LoginPage extends StatelessWidget {
                       backgroundColor:
                           MaterialStatePropertyAll<Color>(Colors.black)),
                   onPressed: () {
-                    print(emailController.text);
-                    print(passwordController.text);
                     login();
                   },
                   child: const Text("Login"),
@@ -125,17 +120,17 @@ class LoginPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 36,
                     child: Image.network(
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png"),
                   ),
-                  Container(
+                  SizedBox(
                     height: 36,
                     child: Image.network(
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png"),
                   ),
-                  Container(
+                  SizedBox(
                     height: 36,
                     child: Image.network(
                         "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/625px-Apple_logo_black.svg.png"),

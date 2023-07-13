@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: Row(
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(
                     Icons.call,
                     color: Colors.blue,
@@ -31,11 +31,11 @@ class MyApp extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.send,
                     color: Colors.blue,
                   ),
-                  const Text(
+                  Text(
                     "Route",
                     style: TextStyle(color: Colors.blue),
                   ),
@@ -44,11 +44,11 @@ class MyApp extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     Icons.share,
                     color: Colors.blue,
                   ),
-                  const Text(
+                  Text(
                     "Share",
                     style: TextStyle(color: Colors.blue),
                   ),

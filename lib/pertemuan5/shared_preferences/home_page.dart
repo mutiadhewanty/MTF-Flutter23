@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_first_project/pertemuan5/shared_preferences/shared_pref.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -20,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     Future<void> login() async {
       var dio = Dio();
       var response = await dio.post(
-        "${baseUrl}/login",
+        "$baseUrl/login",
         data: {"email": "marlin09@example.com", "password": "password"},
       );
       SharedPref.pref?.setString("token", response.data["data"]["token"]);
@@ -32,14 +30,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("${tokenTanpaSharedpref}"),
+            Text(tokenTanpaSharedpref),
             Text("${SharedPref.pref!.getString("token")}"),
             ElevatedButton(
                 onPressed: () {
                   login();
                   setState(() {});
                 },
-                child: Text("Login"))
+                child: const Text("Login"))
           ],
         ),
       ),

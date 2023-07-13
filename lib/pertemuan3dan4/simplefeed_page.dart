@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:my_first_project/pertemuan3dan4/post.dart';
 
 class SimpleFeedPage extends StatelessWidget {
-  SimpleFeedPage({super.key});
-
-  Future<List<Post>> getData() async {
-    var dio = Dio();
-    var response = await dio
-        .get("https://instameter-7ffcb-default-rtdb.firebaseio.com/post.json");
-    List<Post> listPosts =
-        (response.data as List).map((e) => Post.fromJson(e)).toList();
-    return listPosts;
-  }
+  const SimpleFeedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future<List<Post>> getData() async {
+      var dio = Dio();
+      var response = await dio.get(
+          "https://instameter-7ffcb-default-rtdb.firebaseio.com/post.json");
+      List<Post> listPosts =
+          (response.data as List).map((e) => Post.fromJson(e)).toList();
+      return listPosts;
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -37,11 +37,11 @@ class SimpleFeedPage extends StatelessWidget {
                 future: getData(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: const CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
 
                   if (snapshot.hasError) {
-                    return Text("ini tampilan ketika error");
+                    return const Text("ini tampilan ketika error");
                   } else {
                     return SizedBox(
                       width: MediaQuery.of(context).size.width,
@@ -50,7 +50,6 @@ class SimpleFeedPage extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: snapshot.data?.length,
                         itemBuilder: (ctx, index) {
-                          print(index);
                           return Container(
                               color: Colors.white,
                               child: Column(children: [
